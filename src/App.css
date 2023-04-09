@@ -1,0 +1,210 @@
+.app {
+  width: 576px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 12px;
+}
+
+.profile {
+  display: flex;
+  padding-left: 200px;
+  flex-direction: column;
+  gap: 4px;
+  height: 208px;
+}
+
+.profile .left {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.rating, .score {
+  font-family: monospace;
+}
+
+.profile .game-logo {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  margin-left: 155px;
+  width: calc(48/985*2048px);
+  height: 48px;
+}
+
+.userName {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.profile .rating-container {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.profile .rating-container .rating {
+  font-size: 24px;
+}
+
+.profile .avatar {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 70px;
+  left: 50%;
+  margin-left: 140px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.songList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.songItem {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 0 4px 0 0;
+}
+
+.songItem:not(:last-child) {
+  border-bottom: 1px #DDD dotted;
+}
+
+.songItem img {
+  width: 100px;
+  height: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.songInfo {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.songMeta {
+  flex-grow: 1;
+  flex-shrink: 0;
+  gap: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.songMeta .title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 4px;
+  width: 100%;
+}
+
+.songMeta .level {
+  color: white;
+  font-size: 16px;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.songMeta .level.level-2 {
+  background-color: firebrick;
+}
+
+.songMeta .level.level-3 {
+  background-color: mediumpurple;
+}
+
+.songMeta .name {
+  font-size: 18px;
+  width: 100%;
+  height: 28px;
+}
+
+.songMeta .scoreRank {
+  font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.songMeta .scoreRank .score {
+  flex-basis: 146px;
+  text-align: right;
+}
+
+.songMeta .scoreRank .rank {
+  font-weight: bold;
+}
+
+.songRating {
+  width: 100px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.songRating .rating {
+  font-size: 24px;
+}
+
+.songRating .rank {
+  font-size: large;
+}
+
+.listTitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  background-color: aliceblue;
+  padding: 8px 4px;
+}
+
+.ra-rainbow {
+  /* https://w3bits.com/rainbow-text/ */
+  background-image: linear-gradient(to left, violet, indigo, blue, darkgreen, gold, orange, red);
+  background-clip: text;
+  color: transparent;
+}
+.ra-plat {
+  color: lightslategrey;
+}
+.ra-gold {
+  color: darkgoldenrod;
+}
+.ra-silver {
+  color: darkgray;
+}
+.ra-bronze {
+  color: peru;
+}
+.ra-purple {
+  color: mediumpurple;
+}
+.ra-red {
+  color: red;
+}
+.ra-orange {
+  color: orange;
+}
+.ra-green {
+  color: darkgreen;
+}
