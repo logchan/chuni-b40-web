@@ -118,7 +118,7 @@ export default function App() {
           <span className="left">Highest</span>
           <span className="rating-container">{Rating(profile.highestRating)}</span>
         </span>
-        <img src="newplus.png" className="game-logo" />
+        <img src="sun.png" className="game-logo" />
         <img src={`resources/chara_${profile.characterId}.png`} className="avatar" />
       </div>
       {SongList("Best 30", b30)}
