@@ -85,6 +85,12 @@ function SongList(title: string, records: PlayRecord[]) {
             }}>{record.musicName}</span>
             </div>
             <div className="scoreRank">
+              <span className="fcaj">
+                {record.isAllJustice ?
+                <span className="aj">AJ</span> :
+                record.isFullCombo ?
+                <span className="fc">FC</span> : null}
+              </span>
               <span className="score">{record.score}</span>
               <span className="rank">{score_to_rank(record.score)}</span>
             </div>

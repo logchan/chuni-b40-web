@@ -142,12 +142,31 @@
   font-size: 24px;
   display: flex;
   flex-direction: row;
-  gap: 40px;
+}
+
+.songMeta .scoreRank .fcaj {
+  flex-basis: 40px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.songMeta .scoreRank .fcaj .fc {
+  color: orange;
+}
+
+.songMeta .scoreRank .fcaj .aj {
+  background-image: linear-gradient(to left, violet, skyblue, gold, orange, red);
+  background-clip: text;
+  color: transparent;
 }
 
 .songMeta .scoreRank .score {
-  flex-basis: 146px;
+  color: gray;
   text-align: right;
+  flex-basis: 106px;
+  padding-right: 32px;
 }
 
 .songMeta .scoreRank .rank {
@@ -180,7 +199,7 @@
 
 .ra-rainbow {
   /* https://w3bits.com/rainbow-text/ */
-  background-image: linear-gradient(to left, violet, indigo, blue, darkgreen, gold, orange, red);
+  background-image: linear-gradient(to left, violet, rgb(129, 9, 214), blue, green, gold, orange, red);
   background-clip: text;
   color: transparent;
 }

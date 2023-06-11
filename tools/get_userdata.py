@@ -2,6 +2,7 @@ import json
 from argparse import ArgumentParser
 from os.path import isfile
 from pathlib import Path
+from typing import Any, Callable
 
 import requests
 from model import Profile
@@ -13,6 +14,16 @@ def write_file(file: Path, content: str):
     file.parent.mkdir(parents=True, exist_ok=True)
     with open(file, "w", encoding="utf-8") as f:
         f.write(content)
+
+
+def patch_rating(ratings: str, get_resp: Callable[[str], str]) -> str:
+    rating_list = json.loads(ratings)
+    for ra in rating_list:
+        music_id = ra["musicId"]
+        play_data = json.loads(get_resp(f"song/{music_id}"))[0]
+        ra["isFullCombo"] = play_data["isFullCombo"]
+        ra["isAllJustice"] = play_data["isAllJustice"]
+    return json.dumps(rating_list, ensure_ascii=False)
 
 
 def main():
@@ -36,7 +47,7 @@ def main():
     write_file(data_root / "profile.json", Profile.schema().dumps(profile, indent=2, sort_keys=True, ensure_ascii=False))
 
     write_file(data_root / "recent.json", get_resp("rating/recent"))
-    write_file(data_root / "rating.json", get_resp("rating"))
+    write_file(data_root / "rating.json", patch_rating(get_resp("rating"), get_resp))
 
 
 if __name__ == "__main__":

@@ -6,4 +6,6 @@ export default class PlayRecord {
   score = 0;
   ratingBase = 0;
   rating = 0;
+  isFullCombo = false;
+  isAllJustice = false;
 }
