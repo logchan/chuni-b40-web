@@ -1,6 +1,7 @@
 import './App.css';
 import Profile from "./model/Profile";
 import PlayRecord from "./model/PlayRecord";
+import { useEffect, useState } from "react";
 
 const profile = require("./data/profile.json") as Profile;
 const b30 = require("./data/rating.json") as PlayRecord[];
@@ -107,6 +108,18 @@ function SongList(title: string, records: PlayRecord[]) {
 }
 
 export default function App() {
+  const [showR10, setShowR10] = useState(true);
+
+  useEffect(() => {
+    const handler = (ev: KeyboardEvent) => {
+      if (ev.key === "r") {
+        setShowR10(!showR10);
+      }
+    }
+    document.addEventListener("keypress", handler);
+    return () => document.removeEventListener("keypress", handler);
+  }, [showR10]);
+
   return (
     <div className="app">
       <div className="profile"
@@ -128,7 +141,7 @@ export default function App() {
         <img src={`resources/chara_${profile.characterId}.png`} className="avatar" />
       </div>
       {SongList("Best 30", b30)}
-      {SongList("Recent 10", r10)}
+      {showR10 ? SongList("Recent 10", r10) : null}
     </div>
   );
 }
